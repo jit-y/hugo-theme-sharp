@@ -1,11 +1,24 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="{{ .Site.Params.author | default "Foo" }}" />
+  <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
+  {{ hugo.Generator }}
+
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+
+  {{ template "_internal/google_analytics.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+  {{ template "_internal/opengraph.html" . }}
+
+  <body>
+    <header>
+      <h1><a href="{{ .Site.BaseURL }}">{{.Site.Title}}</h1>
+    </header>
+
+    <div id="content">
+      {{- block "main" . }}{{- end }}
+    </div>
+  </body>
 </html>
