@@ -6,8 +6,10 @@
   <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
   {{ hugo.Generator }}
 
-  {{ $style := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint -}}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">
+  {{ $sanitize := resources.Get "css/sanitize.css" | resources.Minify | resources.Fingerprint -}}
+  <link rel="stylesheet" href="{{ $sanitize.Permalink }}">
+  {{ $mainStyle := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint -}}
+  <link rel="stylesheet" href="{{ $mainStyle.Permalink }}">
 
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
 
@@ -16,12 +18,14 @@
   {{ template "_internal/opengraph.html" . }}
 
   <body>
-    <header>
-      <h1><a href="{{ .Site.BaseURL }}">{{.Site.Title}}</h1>
-    </header>
+    <div class="app-wrapper">
+      <header class="app-header">
+        <h1><a href="{{ .Site.BaseURL }}">{{.Site.Title}}</a></h1>
+      </header>
 
-    <div id="content">
-      {{- block "main" . }}{{- end }}
+      <main class="app-container">
+        {{- block "main" . -}}{{- end -}}
+      </main>
     </div>
   </body>
 </html>

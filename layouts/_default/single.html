@@ -1,0 +1,11 @@
+{{ define "main" }}
+  <article>
+    <div class="post-body">
+      <h1>{{ .Title -}}</h1>
+      <span class="post-body-meta"></span>
+      <div class="post-body-content">
+        {{- .Content -}}
+      </div>
+    </div>
+  </article>
+{{ end }}

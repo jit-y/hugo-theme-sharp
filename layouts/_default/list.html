@@ -1,2 +1,12 @@
 {{ define "main" }}
+	<ul class="post-list">
+		{{ range $index, $element := .Paginator.Pages }}
+			<li class="post-list-item">
+				<span class="post-list-item-title">
+					<a href="{{ .Permalink }}">{{ .Title }}</a>
+				</span>
+				<span class="post-list-item-description">{{ .PublishDate.Format "Jan 2, 2006" }}</span>
+			</li>
+		{{ end }}
+	</ul>
 {{ end }}
