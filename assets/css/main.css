@@ -30,21 +30,22 @@ a:hover {
 
 /* main */
 .app-wrapper {
-  width: 860px;
+  width: 780px;
   margin: auto;
 }
 
 .app-header {
   text-align: center;
-  width: 300px;
+  width: 280px;
   height: 500px;
   position: fixed;
+  padding-top: 20px;
   float: left;
 }
 
 .app-container {
   float: right;
-  width: 560px;
+  width: 500px;
 }
 
 .post-body h1::before {
@@ -103,10 +104,24 @@ a:hover {
   font-size: 1.2rem;
 }
 
-/* utils */
-.icon {
-  width: 24px;
-  height: 24px;
+.social-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: baseline;
+
+  padding-inline-start: 0px;
+  padding: 0 55px;
+
+  list-style-type: none;
+}
+
+.social-list-item {
+  padding: 5px 2px;
+}
+
+.social-list-icon {
+  width: 30px;
+  height: 30px;
   stroke: currentColor;
   stroke-width: 2;
   stroke-linecap: round;
