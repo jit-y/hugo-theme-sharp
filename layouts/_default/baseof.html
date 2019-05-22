@@ -20,40 +20,42 @@
   <body>
     <div class="app-wrapper">
       <header class="app-header">
-        <h1><a href="{{ .Site.BaseURL }}">{{.Site.Title}}</a></h1>
-        <ul class="social-list">
-          <li class="social-list-item">
-            {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
-            <svg class="social-list-icon">
-              <use xlink:href="{{ $sprite.Permalink }}#github"/>
-            </svg>
-          </li>
+        <div class="header-content--fixed">
+          <h1><a href="{{ .Site.BaseURL }}">{{.Site.Title}}</a></h1>
+          <ul class="social-list">
+            <li class="social-list-item">
+              {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
+              <svg class="social-list-icon">
+                <use xlink:href="{{ $sprite.Permalink }}#github"/>
+              </svg>
+            </li>
 
-          <li class="social-list-item">
-            {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
-            <svg class="social-list-icon">
-              <use xlink:href="{{ $sprite.Permalink }}#github"/>
-            </svg>
-          </li>
-          <li class="social-list-item">
-            {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
-            <svg class="social-list-icon">
-              <use xlink:href="{{ $sprite.Permalink }}#github"/>
-            </svg>
-          </li>
-          <li class="social-list-item">
-            {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
-            <svg class="social-list-icon">
-              <use xlink:href="{{ $sprite.Permalink }}#github"/>
-            </svg>
-          </li>
-          <li class="social-list-item">
-            {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
-            <svg class="social-list-icon">
-              <use xlink:href="{{ $sprite.Permalink }}#github"/>
-            </svg>
-          </li>
-        </ul>
+            <li class="social-list-item">
+              {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
+              <svg class="social-list-icon">
+                <use xlink:href="{{ $sprite.Permalink }}#github"/>
+              </svg>
+            </li>
+            <li class="social-list-item">
+              {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
+              <svg class="social-list-icon">
+                <use xlink:href="{{ $sprite.Permalink }}#github"/>
+              </svg>
+            </li>
+            <li class="social-list-item">
+              {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
+              <svg class="social-list-icon">
+                <use xlink:href="{{ $sprite.Permalink }}#github"/>
+              </svg>
+            </li>
+            <li class="social-list-item">
+              {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
+              <svg class="social-list-icon">
+                <use xlink:href="{{ $sprite.Permalink }}#github"/>
+              </svg>
+            </li>
+          </ul>
+        </div>
       </header>
 
       <main class="app-container">

@@ -30,22 +30,25 @@ a:hover {
 
 /* main */
 .app-wrapper {
-  width: 780px;
+  width: 80%;
   margin: auto;
+  display: flex;
 }
 
 .app-header {
   text-align: center;
-  width: 280px;
-  height: 500px;
-  position: fixed;
-  padding-top: 20px;
-  float: left;
+  width: 30%;
+  padding: 20px 0 10px;
+}
+.header-content--fixed {
+  position: sticky;
+  top: 20px;
 }
 
 .app-container {
-  float: right;
-  width: 500px;
+  display: block;
+  width: 70%;
+  padding: 20px 0 5px;
 }
 
 .post-body h1::before {
