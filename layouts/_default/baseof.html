@@ -24,18 +24,34 @@
           <h1 class="header-title">
             <a href="{{ .Site.BaseURL }}">{{.Site.Title}}</a>
           </h1>
-          <ul class="social-list">
-            {{ range $social := .Site.Params.social }}
-              <li class="social-list-item">
-                {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
-                <a href="{{ $social.url }}" target="_blank">
-                  <svg class="social-list-icon">
-                    <use xlink:href="{{ $sprite.Permalink }}#{{ $social.name }}"/>
-                  </svg>
-                </a>
-              </li>
-            {{ end -}}
-          </ul>
+          {{- with .Site.Params.social }}
+            <ul class="social-list">
+              {{ range $social := . }}
+                <li class="social-list-item">
+                  {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
+                  <a href="{{ $social.url }}" target="_blank">
+                    <svg class="social-list-icon">
+                      <use xlink:href="{{ $sprite.Permalink }}#{{ $social.name }}"/>
+                    </svg>
+                  </a>
+                </li>
+              {{ end -}}
+            </ul>
+          {{ end }}
+
+          {{- with .Site.RegularPages }}
+            <div class="header-post">
+              <span class="header-post-list-title">Recent:</span>
+              <ul class="header-post-list">
+                {{ range $page := first 10 . }}
+                  <li class="header-post-list-item">
+                    <span class="header-post-list-item-meta">{{ .PublishDate.Format "Jan 2, 2006" }}</span>
+                    <a href="{{ .Permalink }}">{{- .Title }}</a>
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+          {{ end }}
         </div>
       </header>
 

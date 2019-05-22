@@ -26,7 +26,12 @@ body {
 
 a {
   text-decoration: none;
-  color: $black-color;
+  color: $primary-color;
+}
+
+a:hover {
+  border-bottom: 1px solid $light-color;
+  color: $light-color;
 }
 
 /* main */
@@ -43,24 +48,51 @@ a {
   padding: 20px 0 10px;
 }
 
+.header-title a {
+  color: $black-color;
+}
+
 .header-content--fixed {
   position: sticky;
   top: 20px;
+}
+
+.header-post {
+  text-align: left;
+  padding-left: 10%;
+  padding-top: 10px;
+}
+
+.header-post-list-title {
+  padding-left: 40px;
+}
+
+.header-post-list {
+  display: block;
+
+  list-style: none;
+  font-size: 1.3rem;
+}
+
+.header-post-list-item {
+  display: inline-block;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 80%;
+
+  padding: 2px 0;
+}
+
+.header-post-list-item-meta {
+  font-size: 1.2rem;
 }
 
 .app-container {
   display: block;
   width: 70%;
   padding: 20px 0 5px;
-}
-
-.app-container a {
-  color: $primary-color;
-}
-
-.app-container a:hover {
-  border-bottom: 1px solid $light-color;
-  color: $light-color;
 }
 
 .post-body h1::before {
@@ -155,10 +187,12 @@ a {
 
 .social-list-item a {
   text-decoration: none;
+  color: $black-color;
 }
 
 .social-list-item a:hover {
   color: $light-color;
+  border-bottom: none;
 }
 
 .social-list-icon {
