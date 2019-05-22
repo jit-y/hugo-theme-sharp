@@ -1,3 +1,10 @@
+/* variable */
+$white-color: #fff;
+$black-color: #151515;
+$primary-color: #267cb9;
+$light-color: #a9a9a9;
+$dark-color: #5e5e5e;
+
 /* base */
 
 html {
@@ -9,9 +16,9 @@ html {
 }
 
 body {
-  background: #fff;
+  background: $white-color;
   background-size: cover;
-  color: #151515;
+  color: $black-color;
   text-align: left;
   font-size: 1.5rem;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue","Yu Gothic",YuGothic,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
@@ -19,14 +26,8 @@ body {
 
 a {
   text-decoration: none;
-  color: #267cb9;
+  color: $black-color;
 }
-
-a:hover {
-  border-bottom: 1px solid #a9a9a9;
-  color: #a9a9a9;
-}
-
 
 /* main */
 .app-wrapper {
@@ -46,14 +47,19 @@ a:hover {
   top: 20px;
 }
 
-.header-title a {
-  color: #151515;
-}
-
 .app-container {
   display: block;
   width: 70%;
   padding: 20px 0 5px;
+}
+
+.app-container a {
+  color: $primary-color;
+}
+
+.app-container a:hover {
+  border-bottom: 1px solid $light-color;
+  color: $light-color;
 }
 
 .post-body h1::before {
@@ -87,7 +93,7 @@ a:hover {
 }
 
 .post-body {
-  color: #5e5e5e;
+  color: $dark-color;
 }
 
 /* post list */
@@ -125,6 +131,14 @@ a:hover {
 
 .social-list-item {
   padding: 5px 2px;
+}
+
+.social-list-item a {
+  text-decoration: none;
+}
+
+.social-list-item a:hover {
+  color: $light-color;
 }
 
 .social-list-icon {

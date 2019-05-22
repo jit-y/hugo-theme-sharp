@@ -8,7 +8,7 @@
 
   {{ $sanitize := resources.Get "css/sanitize.css" | resources.Minify | resources.Fingerprint -}}
   <link rel="stylesheet" href="{{ $sanitize.Permalink }}">
-  {{ $mainStyle := resources.Get "css/main.css" | resources.Minify | resources.Fingerprint -}}
+  {{ $mainStyle := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
   <link rel="stylesheet" href="{{ $mainStyle.Permalink }}">
 
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
@@ -24,39 +24,17 @@
           <h1 class="header-title">
             <a href="{{ .Site.BaseURL }}">{{.Site.Title}}</a>
           </h1>
-
           <ul class="social-list">
-            <li class="social-list-item">
-              {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
-              <svg class="social-list-icon">
-                <use xlink:href="{{ $sprite.Permalink }}#github"/>
-              </svg>
-            </li>
-
-            <li class="social-list-item">
-              {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
-              <svg class="social-list-icon">
-                <use xlink:href="{{ $sprite.Permalink }}#github"/>
-              </svg>
-            </li>
-            <li class="social-list-item">
-              {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
-              <svg class="social-list-icon">
-                <use xlink:href="{{ $sprite.Permalink }}#github"/>
-              </svg>
-            </li>
-            <li class="social-list-item">
-              {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
-              <svg class="social-list-icon">
-                <use xlink:href="{{ $sprite.Permalink }}#github"/>
-              </svg>
-            </li>
-            <li class="social-list-item">
-              {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
-              <svg class="social-list-icon">
-                <use xlink:href="{{ $sprite.Permalink }}#github"/>
-              </svg>
-            </li>
+            {{ range $social := .Site.Params.social }}
+              <li class="social-list-item">
+                {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
+                <a href="{{ $social.url }}" target="_blank">
+                  <svg class="social-list-icon">
+                    <use xlink:href="{{ $sprite.Permalink }}#{{ $social.name }}"/>
+                  </svg>
+                </a>
+              </li>
+            {{ end -}}
           </ul>
         </div>
       </header>

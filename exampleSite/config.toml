@@ -11,8 +11,15 @@ footnoteReturnLinkContents = "^"
 themesDir = "../.."
 theme = "hugo-sharp"
 
-[menu]
+[[params.social]]
+  name = "github"
+  url = "https://github.com/jit-y"
 
+[[params.social]]
+  name = "github"
+  url = "https://github.com/jit-y"
+
+[menu]
   [[menu.main]]
     identifier = "about"
     name = "About"
