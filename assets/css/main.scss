@@ -1,10 +1,12 @@
 /* variable */
-$white-color: #fff;
-$black-color: #151515;
 $primary-color: #267cb9;
+
+$black-color: #151515;
 $gray-color: #5e5e5e;
 $dark-gray-color: #a9a9a9;
 $dim-gray-color: #909090;
+$light-gray-color: #d3d3d3;
+$white-color: #fff;
 
 /* base */
 
@@ -146,7 +148,7 @@ a:hover {
 }
 
 .post-body-content blockquote {
-  border-left: 3px solid $dark-gray-color;
+  border-left: 5px solid $light-gray-color;
   color: $dim-gray-color;
   padding: 1.5em;
 }
