@@ -4,7 +4,16 @@
 			<li class="post-list-item">
 				<span class="post-list-item-title">
 					<a href="{{ .Permalink }}">{{ .Title }}</a>
-				</span>
+					{{- with .Params.tags }}
+						<span class="post-list-item-tags">[
+							{{ range $tag := . -}}
+								{{- with $.Site.GetPage (printf "/%s/%s" "tags" .) -}}
+									<a href="{{ .Permalink }}">#{{ .Title }}</a>
+								{{ end }}
+							{{ end }}
+							]</span>
+					</span>
+				{{ end }}
 				<span class="post-list-item-description">{{ .PublishDate.Format "Jan 2, 2006" }}</span>
 			</li>
 		{{ end }}
