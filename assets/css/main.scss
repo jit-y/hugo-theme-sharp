@@ -2,8 +2,9 @@
 $white-color: #fff;
 $black-color: #151515;
 $primary-color: #267cb9;
-$light-color: #a9a9a9;
-$dark-color: #5e5e5e;
+$gray-color: #5e5e5e;
+$dark-gray-color: #a9a9a9;
+$dim-gray-color: #909090;
 
 /* base */
 
@@ -30,8 +31,8 @@ a {
 }
 
 a:hover {
-  border-bottom: 1px solid $light-color;
-  color: $light-color;
+  border-bottom: 1px solid $dark-gray-color;
+  color: $dark-gray-color;
 }
 
 /* main */
@@ -126,7 +127,9 @@ a:hover {
 }
 
 .post-body {
-  color: $dark-color;
+  color: $gray-color;
+  text-align: justify;
+  line-height: 2.2rem;
 }
 
 .post-body-meta {
@@ -140,6 +143,12 @@ a:hover {
 
 .post-body-content {
   padding: 10px 0;
+}
+
+.post-body-content blockquote {
+  border-left: 3px solid $dark-gray-color;
+  color: $dim-gray-color;
+  padding: 1.5em;
 }
 
 /* post list */
@@ -191,7 +200,7 @@ a:hover {
 }
 
 .social-list-item a:hover {
-  color: $light-color;
+  color: $dark-gray-color;
   border-bottom: none;
 }
 
