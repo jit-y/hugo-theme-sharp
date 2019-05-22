@@ -2,7 +2,16 @@
   <article>
     <div class="post-body">
       <h1>{{ .Title -}}</h1>
-      <span class="post-body-meta"></span>
+      <span class="post-body-meta">{{ .PublishDate.Format "Jan 2, 2006" }}</span>
+      {{- with .Params.tags }}
+        <span class="post-body-tags">[
+          {{ range $tag := . -}}
+            {{- with $.Site.GetPage (printf "/%s/%s" "tags" .) -}}
+              <a href="{{ .Permalink }}">#{{ .Title }}</a>
+            {{ end }}
+          {{ end }}
+        ]</span>
+      {{ end }}
       <div class="post-body-content">
         {{- .Content -}}
       </div>
