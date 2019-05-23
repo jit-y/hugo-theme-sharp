@@ -36,6 +36,10 @@ a:hover {
   color: $dark-gray-color;
 }
 
+ul {
+  padding-left: 0px;
+}
+
 /* main */
 .app-wrapper {
   width: 80%;
@@ -47,11 +51,7 @@ a:hover {
 .app-header {
   text-align: left;
   width: 35%;
-  padding: 20px 0 0 5%;
-}
-
-.header-title {
-  padding-left: 40px;
+  padding: 20px 0 0 100px;
 }
 
 .header-title a {
@@ -65,10 +65,6 @@ a:hover {
 
 .header-post {
   padding-top: 10px;
-}
-
-.header-post-list-title {
-  padding-left: 40px;
 }
 
 .header-post-list {
@@ -161,6 +157,7 @@ a:hover {
 
 .post-list-item {
   padding: 10px 0;
+  border-bottom: 1px solid $light-gray-color;
 }
 
 .post-list-item-title {
@@ -188,7 +185,7 @@ a:hover {
   justify-content: left;
 
   padding-inline-start: 0px;
-  padding: 0 55px;
+  padding: 0 10%;
 
   list-style-type: none;
 }
