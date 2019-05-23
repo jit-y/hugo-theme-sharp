@@ -1,21 +1,21 @@
 {{ define "main" }}
-	<ul class="post-list">
-		{{ range $index, $element := .Paginator.Pages }}
-			<li class="post-list-item">
-				<span class="post-list-item-title">
-					<a href="{{ .Permalink }}">{{ .Title }}</a>
-					{{- with .Params.tags }}
-						<span class="post-list-item-tags">[
-							{{ range $tag := . -}}
-								{{- with $.Site.GetPage (printf "/%s/%s" "tags" .) -}}
-									<a href="{{ .Permalink }}">#{{ .Title }}</a>
-								{{ end }}
-							{{ end }}
-							]</span>
-					</span>
-				{{ end }}
-				<span class="post-list-item-meta">{{ .PublishDate.Format "Jan 2, 2006" }}</span>
-			</li>
-		{{ end }}
-	</ul>
+  <ul class="post-list">
+    {{ range $index, $element := .Paginator.Pages }}
+      <li class="post-list-item">
+        <span class="post-list-item-title">
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+          {{- with .Params.tags }}
+            <span class="post-list-item-tags">[
+              {{ range $tag := . -}}
+                {{- with $.Site.GetPage (printf "/%s/%s" "tags" .) -}}
+                    <a href="{{ .Permalink }}">#{{ .Title }}</a>
+                {{ end }}
+              {{ end }}
+            ]</span>
+          {{ end }}
+        </span>
+        <span class="post-list-item-meta">{{ .PublishDate.Format "Jan 2, 2006" }}</span>
+      </li>
+    {{ end }}
+  </ul>
 {{ end }}
