@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="{{ $sanitize.Permalink }}">
   {{ $mainStyle := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
   <link rel="stylesheet" href="{{ $mainStyle.Permalink }}">
+  {{ $mermaid := resources.Get "js/mermaid.min.js" | resources.Minify | resources.Fingerprint -}}
+  <script src="{{ $mermaid.Permalink }}"></script>
 
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
 
@@ -60,6 +62,7 @@
             </div>
           {{ end }}
         </div>
+
       </header>
 
       <main class="app-container">
