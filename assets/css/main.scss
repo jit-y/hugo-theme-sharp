@@ -95,6 +95,16 @@ a:hover {
   padding: 20px 0 5px;
 }
 
+.post-body pre {
+  overflow-x: scroll;
+}
+
+.post-body-content p code {
+  background-color: $light-gray-color;
+  border-radius: 3%;
+  padding: 1px 3px;
+}
+
 .post-body h1::before {
   content: "#";
   margin-right: 5px;
