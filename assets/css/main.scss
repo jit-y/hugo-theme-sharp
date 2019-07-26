@@ -79,6 +79,10 @@ a:hover {
   padding: 1px 3px;
 }
 
+.post-body h1 {
+  line-height: 3.5rem;
+}
+
 .post-body h1::before {
   content: "#";
   margin-right: 5px;
@@ -131,7 +135,8 @@ a:hover {
 .post-body-content blockquote {
   border-left: 5px solid $light-gray-color;
   color: $dim-gray-color;
-  padding: 1.5em;
+  padding: 5px 0 5px 10px;
+  margin-left: 20px;
 }
 
 /* post list */
@@ -202,8 +207,8 @@ a:hover {
   }
 
   .app-container {
-    width: 90%;
-    padding-left: 10%;
+    width: 100%;
+    padding: 20px 20px 0;
   }
 
   .app-header {
