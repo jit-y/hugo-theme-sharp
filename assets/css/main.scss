@@ -81,6 +81,32 @@ a:hover {
 
 .post-body h1 {
   line-height: 3.5rem;
+  padding-top: 10px;
+}
+
+.post-body h2 {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.post-body h3 {
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+.post-body h4 {
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+.post-body h5 {
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+.post-body h6 {
+  padding-top: 20px;
+  padding-bottom: 5px;
 }
 
 .post-body h1::before {
