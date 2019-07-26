@@ -38,16 +38,15 @@ a:hover {
 
 /* main */
 .app-wrapper {
-  width: 80%;
+  width: 100%;
   margin: auto;
   display: flex;
-  padding-bottom: 50px;
 }
 
 .app-header {
   text-align: left;
-  width: 35%;
-  padding: 20px 0 0 100px;
+  width: 25%;
+  padding: 100px 0 0 5%;
 }
 
 .app-header ul {
@@ -63,36 +62,10 @@ a:hover {
   top: 20px;
 }
 
-.header-post {
-  padding-top: 10px;
-}
-
-.header-post-list {
-  display: block;
-
-  list-style: none;
-  font-size: 1.3rem;
-}
-
-.header-post-list-item {
-  display: inline-block;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 80%;
-
-  padding: 2px 0;
-}
-
-.header-post-list-item-meta {
-  font-size: 1.2rem;
-}
-
 .app-container {
   display: block;
-  width: 65%;
-  padding: 20px 0 5px;
+  width: 75%;
+  padding: 20px 5% 5px 10px;
 }
 
 .post-body pre {
@@ -201,7 +174,7 @@ a:hover {
 
 .social-list-item {
   padding-top: 5px;
-  padding-left: 2%;
+  padding-left: 5px;
 }
 
 .social-list-item a {
@@ -222,4 +195,26 @@ a:hover {
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+}
+
+@media screen and (max-width: 896px) {
+  .app-wrapper {
+    display: block;
+  }
+
+  .app-container {
+    width: 90%;
+    padding-left: 10%;
+  }
+
+  .app-header {
+    text-align: center;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .social-list {
+    display: inline-flex;
+  }
 }

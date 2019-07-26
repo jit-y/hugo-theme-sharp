@@ -47,24 +47,8 @@
               {{ end -}}
             </ul>
           {{ end }}
-
-          {{- with .Site.RegularPages }}
-            <div class="header-post">
-              <span class="header-post-list-title">Recent:</span>
-              <ul class="header-post-list">
-                {{ range $page := first 10 . }}
-                  <li class="header-post-list-item">
-                    <span class="header-post-list-item-meta">{{ .PublishDate.Format "Jan 2, 2006" }}</span>
-                    <a href="{{ .Permalink }}">{{- .Title }}</a>
-                  </li>
-                {{ end }}
-              </ul>
-            </div>
-          {{ end }}
         </div>
-
       </header>
-
       <main class="app-container">
         {{- block "main" . -}}{{- end -}}
       </main>
