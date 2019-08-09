@@ -2,9 +2,9 @@
 $primary-color: #267cb9;
 $black-color: #151515;
 $gray-color: #5e5e5e;
-$dark-gray-color: #a9a9a9;
-$dim-gray-color: #909090;
+$dark-gray-color: #909090;
 $light-gray-color: #d3d3d3;
+$highlight-color: #eeeeee;
 $white-color: #fff;
 
 /* base */
@@ -149,18 +149,19 @@ a:hover {
 
 .post-body-content blockquote {
   border-left: 5px solid $light-gray-color;
-  color: $dim-gray-color;
+  color: $dark-gray-color;
   padding: 5px 0 5px 10px;
   margin-left: 20px;
 }
 
 .post-body-content pre {
   overflow-x: scroll;
-  padding: 10px 10px 20px;
+  padding: 20px 10px 20px;
+  background-color: $highlight-color !important;
 }
 
 .post-body-content p code {
-  background-color: $light-gray-color;
+  background-color: $highlight-color;
   border-radius: 3%;
   padding: 1px 3px;
 }
@@ -267,7 +268,7 @@ li.page-item.active a {
 }
 
 li.page-item.disabled a {
-  color: $dim-gray-color;
+  color: $dark-gray-color;
 }
 
 @media screen and (max-width: 896px) {
