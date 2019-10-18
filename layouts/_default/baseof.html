@@ -30,17 +30,14 @@
   <body>
     <div class="app-wrapper">
       <header class="app-header">
-        <div class="header-content--fixed">
-          <h1 class="header-title">
-            <a href="{{ .Site.BaseURL }}">{{.Site.Title}}</a>
-          </h1>
+        <div class="header-content">
           {{- with .Site.Params.social }}
-            <ul class="social-list">
+            <ul class="header-social-list">
               {{ range $social := . }}
-                <li class="social-list-item">
+                <li class="header-social-list-item">
                   {{ $sprite := resources.Get "icons/feather-sprite.svg" }}
                   <a href="{{ $social.url }}" target="_blank">
-                    <svg class="social-list-icon">
+                    <svg class="header-social-list-icon">
                       <use xlink:href="{{ $sprite.Permalink }}#{{ $social.name }}"/>
                     </svg>
                   </a>

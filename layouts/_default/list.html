@@ -1,4 +1,7 @@
 {{ define "main" }}
+  <h1 class="header-title">
+    <a href="{{ .Site.BaseURL }}">Archives</a>
+  </h1>
   {{ range (.Data.Pages.GroupByDate "2006") -}}
     <section>
       <h2 class="post-list-heading">{{ .Key }}</h2>

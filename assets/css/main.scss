@@ -1,8 +1,8 @@
 /* variable */
 $primary-color: #267cb9;
-$black-color: #151515;
-$gray-color: #5e5e5e;
-$dark-gray-color: #909090;
+$black-color: #2e2e2e;
+$dark-gray-color: #414141;
+$gray-color: #6b6b6b;
 $light-gray-color: #d3d3d3;
 $highlight-color: #eeeeee;
 $white-color: #fff;
@@ -50,60 +50,95 @@ a:hover {
 .app-wrapper {
   width: 100%;
   margin: auto;
-  display: flex;
 }
 
 .app-header {
-  text-align: center;
-  width: 25%;
-  padding: 80px 0 0 5%;
+  width: 70%;
+  margin: auto;
 }
 
 .app-header ul {
   padding-left: 0px;
 }
 
+.header-social-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  list-style-type: none;
+}
+
+.header-social-list-item {
+  padding: 5px 10px;
+}
+
+.header-social-list-item a {
+  text-decoration: none;
+  color: $black-color;
+}
+
+.header-social-list-item a:hover {
+  color: $dark-gray-color;
+  border-bottom: none;
+}
+
+.header-social-list-icon {
+  width: 30px;
+  height: 30px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
 .header-title a {
   color: $black-color;
 }
 
-.header-content--fixed {
-  position: sticky;
-  top: 20px;
+.header-content {
+  padding-right: 10px;
 }
 
 .app-container {
   display: block;
-  width: 75%;
-  padding: 20px 5% 50px 10px;
+  width: 70%;
+  margin: auto;
 }
 
 .post-body h1 {
+  color: $black-color;
   line-height: 3.5rem;
   padding-top: 10px;
 }
 
 .post-body h2 {
+  color: $black-color;
   padding-top: 30px;
   padding-bottom: 10px;
 }
 
 .post-body h3 {
+  color: $black-color;
   padding-top: 20px;
   padding-bottom: 5px;
 }
 
 .post-body h4 {
+  color: $black-color;
   padding-top: 20px;
   padding-bottom: 5px;
 }
 
 .post-body h5 {
+  color: $black-color;
   padding-top: 20px;
   padding-bottom: 5px;
 }
 
 .post-body h6 {
+  color: $black-color;
   padding-top: 20px;
   padding-bottom: 5px;
 }
@@ -139,7 +174,7 @@ a:hover {
 }
 
 .post-body {
-  color: $gray-color;
+  color: $dark-gray-color;
   text-align: justify;
   line-height: 2.2rem;
 }
@@ -159,7 +194,7 @@ a:hover {
 
 .post-body-content blockquote {
   border-left: 5px solid $light-gray-color;
-  color: $dark-gray-color;
+  color: $gray-color;
   padding: 5px 0 5px 10px;
   margin-left: 20px;
 }
@@ -230,38 +265,6 @@ a:hover {
   font-size: 1.2rem;
 }
 
-.social-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  list-style-type: none;
-}
-
-.social-list-item {
-  padding: 5px 10px;
-}
-
-.social-list-item a {
-  text-decoration: none;
-  color: $black-color;
-}
-
-.social-list-item a:hover {
-  color: $dark-gray-color;
-  border-bottom: none;
-}
-
-.social-list-icon {
-  width: 30px;
-  height: 30px;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  fill: none;
-}
-
 ul.pagination {
   padding-left: 0;
   list-style-type: none;
@@ -287,13 +290,13 @@ li.page-item.disabled a {
   }
 
   .app-container {
-    width: 100%;
+    width: 90%;
     padding: 20px 20px 50px;
   }
 
   .app-header {
     text-align: center;
-    width: 100%;
+    width: 90%;
     padding-left: 10px;
     padding-right: 10px;
   }
