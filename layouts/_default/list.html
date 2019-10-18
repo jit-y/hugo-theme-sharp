@@ -1,26 +1,28 @@
 {{ define "main" }}
   <h1 class="header-title">
-    <a href="{{ .Site.BaseURL }}">Archives</a>
+    <a href="{{ .Site.BaseURL }}">POSTS</a>
   </h1>
   {{ range (.Data.Pages.GroupByDate "2006") -}}
     <section>
-      <h2 class="post-list-heading">{{ .Key }}</h2>
+      <h2 id="{{ .Key }}" class="post-list-heading">
+        <a class="title-link" href="#{{ .Key }}">{{ .Key }}</a>
+      </h2>
       <ul class="post-list">
         {{ range .Pages -}}
           <li class="post-list-item">
             <span class="post-list-item-title">
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-              {{- with .Params.tags }}
-                <span class="post-list-item-tags">[
-                  {{ range $tag := . -}}
-                    {{- with $.Site.GetPage (printf "/%s/%s" "tags" .) -}}
-                        <a href="{{ .Permalink }}">#{{ .Title }}</a>
-                    {{ end }}
-                  {{ end }}
-                ]</span>
-              {{ end }}
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
             </span>
-            <span class="post-list-item-meta">{{ .PublishDate.Format "Jan 2, 2006" }}</span>
+            {{- with .Params.tags }}
+              <span class="post-list-item-tags">[
+                {{ range $tag := . -}}
+                  {{- with $.Site.GetPage (printf "/%s/%s" "tags" .) -}}
+                      <a href="{{ .Permalink }}">{{ .Title }}</a>
+                  {{ end }}
+                {{ end }}
+              ]</span>
+            {{ end }}
+            <div class="post-list-item-date">{{ .PublishDate.Format "Jan 2, 2006" }}</div>
           </li>
         {{ end }}
       </ul>
