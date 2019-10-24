@@ -127,12 +127,15 @@ a:hover {
   fill: none;
 }
 
-.header-title a {
-  color: $black-color;
+.header-content {
+  display: flex;
+  padding-right: 10px;
+  justify-content: space-between;
 }
 
-.header-content {
-  padding-right: 10px;
+.header-title a {
+  display: inline-block;
+  color: $black-color;
 }
 
 .app-container {
@@ -290,17 +293,19 @@ li.page-item.disabled a {
 
   .app-container {
     width: 90%;
-    padding: 20px 20px 50px;
+    padding-bottom: 50px;
   }
 
   .app-header {
-    text-align: center;
     width: 90%;
-    padding-left: 10px;
-    padding-right: 10px;
   }
 
   .social-list {
     display: inline-flex;
+  }
+
+  .header-content {
+    display: block;
+    padding-right: 10px;
   }
 }

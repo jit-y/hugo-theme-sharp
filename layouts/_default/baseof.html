@@ -31,6 +31,9 @@
     <div class="app-wrapper">
       <header class="app-header">
         <div class="header-content">
+          <h1 class="header-title">
+            <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+          </h1>
           {{- with .Site.Params.social }}
             <ul class="header-social-list">
               {{ range $social := . }}
