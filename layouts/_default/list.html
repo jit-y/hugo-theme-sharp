@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ range (.Data.Pages.GroupByDate "2006") -}}
+  {{ range ($.Site.RegularPages.GroupByDate "2006") -}}
     <section>
       <h2 id="{{ .Key }}" class="post-list-heading">
         <a class="title-link" href="#{{ .Key }}">{{ .Key }}</a>
