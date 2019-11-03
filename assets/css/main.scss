@@ -91,6 +91,10 @@ a:hover {
   padding-left: 0px;
 }
 
+.app-footer {
+  padding-bottom: 50px;
+}
+
 .title-link {
   color: $black-color;
 }
@@ -293,7 +297,6 @@ li.page-item.disabled a {
 
   .app-container {
     width: 90%;
-    padding-bottom: 50px;
   }
 
   .app-header {
