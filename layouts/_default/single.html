@@ -2,14 +2,14 @@
   <article>
     <div class="post-body">
       <h1>
-        <a class="title-link" href="{{ .Permalink }}">{{ .Title -}}</a>
+        <a class="title-link" href="{{ .RelPermalink }}">{{ .Title -}}</a>
       </h1>
       <span class="post-body-meta">{{ .PublishDate.Format "Jan 2, 2006" }}</span>
       {{- with .Params.tags }}
         <span class="post-body-tags">[
           {{ range $tag := . -}}
             {{- with $.Site.GetPage (printf "/%s/%s" "tags" .) -}}
-              <a href="{{ .Permalink }}">{{ .Title }}</a>
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             {{ end }}
           {{ end }}
         ]</span>
